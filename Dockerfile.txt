@@ -1,0 +1,5 @@
+FROM openjdk:8
+LABEL maintainer="sivagurunathbabu@gmail.com"
+COPY userTimeTracker-1.0.jar userTimeTracker-1.0.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://oreo/dev","-jar","userTimeTracker-1.0.jar"]

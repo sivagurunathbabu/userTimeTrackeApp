@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+    <h1>Search User Timesheet</h1>
+<form action="#" th:action="@{/userTimesheets}" method="post">
+<div align="center">
+    <table style="width:250px" border="1" >
+        <tr>
+            <td>    E-Mail   </td>
+            <td><input type="text" th:value="${email}" name="email"/></td>
+        </tr>
+    </table>
+    <p style="width: 100px">
+    <input type="submit" value="Search"/>
+    </p>
+    <p><a href="index">Home Page</a></p>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html xmlns:th="https://thymeleaf.org">  
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Time Tracker Application</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+        <h1>User Timesheets </h1>
+        
+<div th:switch="${userTimesheets}">
+    <h2 th:case="null">No Timsheets yet!</h2>
+        <div th:case="*">
+            <h2>Timesheets</h2>
+            <table border="1" style="width: 750px">
+                <thead>
+                    <tr>
+                        <th>E-Mail</th>
+                        <th>StartTime</th>
+                        <th>EndTime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="timesheet : ${userTimesheets}" >
+                    <td th:text="${timesheet.email}"></td>
+                    <td th:text="${timesheet.startTime}"></td>
+					<td th:text="${timesheet.endTime}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p align="center"><a href="index">Home Page</a></p>
+    </div>      
+    
+</div>
+</body>
+</html>
